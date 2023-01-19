@@ -5,7 +5,6 @@ import "../assets/css/nucleo-svg.css"
 import "../assets/css/nucleo-svg.css"
 import "../assets/css/soft-ui-dashboard.css"
 import logoct from "../assets/img/logoct.png"
-import Footer from "./Footer"
 
 
 const LeftSide = () => {
