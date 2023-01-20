@@ -20,7 +20,6 @@ const FormCategorie = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.alert('Message : Catégorie ajoutée avec succès!');
                     window.location.replace("/listeCategorie");
                 }
                 else{

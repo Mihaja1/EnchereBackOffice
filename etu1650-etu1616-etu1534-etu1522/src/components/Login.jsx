@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import curved6 from "../assets/img/curved-images/curved6.jpg";
-import "../assets/css/login.css";
 
 const Login = () => {
 

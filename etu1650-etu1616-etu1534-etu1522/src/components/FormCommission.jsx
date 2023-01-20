@@ -20,7 +20,7 @@ const FormCommission = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.alert('Message : Commission ajoutée avec succès!');
+                    window.location.replace("/listeCommission");
                 }
                 else{
                     window.alert(error);
