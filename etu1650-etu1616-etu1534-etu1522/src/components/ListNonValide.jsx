@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import LeftSide from "./LeftSide";
 
 
@@ -7,7 +6,6 @@ function ListNonValide() {
 
     const [rechargement, setRechargement] = useState([]);
     const [vide, setVide] = useState();
-    const navigate = useNavigate();
 
     useEffect(()=>{
         fetch("https://wservice-production.up.railway.app/rechargement/listeNonValide", {
@@ -30,7 +28,7 @@ function ListNonValide() {
             .then((item)=>item.json())
             .then((data) => {
                 var d = JSON.stringify(data["data"]);
-                navigate("/rechargementValide");
+                window.location.replace("/rechargementValide");
             })
     }
 
