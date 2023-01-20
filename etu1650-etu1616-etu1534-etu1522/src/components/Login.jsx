@@ -13,7 +13,7 @@ const Login = () => {
             "motDePasse": mdp
         };
 
-        fetch('http://localhost:8080/admin/login',{
+        fetch('https://wservice-production.up.railway.app/admin/authentification',{
             method : 'POST',
             body : JSON.stringify(admins),
             headers : {'Content-Type' : 'application/json'},

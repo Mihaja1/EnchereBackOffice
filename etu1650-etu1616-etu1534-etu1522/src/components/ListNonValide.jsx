@@ -10,7 +10,7 @@ function ListNonValide() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        fetch("http://localhost:8080/rechargement/listeNonValide", {
+        fetch("https://wservice-production.up.railway.app/rechargement/listeNonValide", {
             method: 'GET'
         })
         .then((item)=>item.json())
@@ -24,7 +24,7 @@ function ListNonValide() {
     }, [rechargement]);
 
     const handleClick = (idRechargement) => {
-            fetch("http://localhost:8080/rechargement/validationRechargement?idRechargement="+idRechargement, {
+            fetch("https://wservice-production.up.railway.app/rechargement/validationRechargement?idRechargement="+idRechargement, {
                 method: 'PUT'
             })
             .then((item)=>item.json())

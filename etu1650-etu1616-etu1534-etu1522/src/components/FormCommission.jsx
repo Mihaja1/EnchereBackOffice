@@ -11,7 +11,7 @@ const FormCommission = () => {
             "taux" : taux,
         };
 
-        fetch('http://localhost:8080/commission/insertion',{
+        fetch('https://wservice-production.up.railway.app/commission/insertion',{
             method : 'POST',
             body : JSON.stringify(commission),
             headers : {'Content-Type' : 'application/json'},
