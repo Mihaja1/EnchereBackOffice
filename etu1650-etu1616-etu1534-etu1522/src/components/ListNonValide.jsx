@@ -9,7 +9,7 @@ const ListNonValide = () => {
     const [vide, setVide] = useState();
 
     useEffect(()=>{
-        fetch("http://localhost:8080/rechargement", {
+        fetch("http://localhost:8080/rechargement/listeNonValide", {
             method: 'GET'
         })
         .then((item)=>item.json())
@@ -23,20 +23,13 @@ const ListNonValide = () => {
     }, [rechargement]);
 
     const handleClick = (idRechargement) => {
-        let value = prompt("Ecrivez: CONFIRMER pour confirmer le rechargement");
-
-        if(value === "CONFIRMER") {
             fetch("http://localhost:8080/rechargement/validationRechargement?idRechargement="+idRechargement, {
                 method: 'PUT'
             })
             .then((item)=>item.json())
             .then((data) => {
                 var d = JSON.stringify(data["data"]);
-                alert(d);
             })
-        } else{
-            alert("Incorrecte, veuillez réssayer");
-        }
     }
 
     if (rechargement === undefined) {

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import curved6 from "../assets/img/curved-images/curved6.jpg";
+import "../assets/css/login.css";
 
 const Login = () => {
 
@@ -33,33 +35,35 @@ const Login = () => {
     return(
 
         <>
-        <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-            <div class="container-fluid py-4">
-                <div class="row">
-                    <div class="col-10">
-                        <div class="card mb-4">
-                            <div class="card-header pb-0">
-                            <h6>Login</h6>
-                            </div>
-                            <div class="card-body px-0 pt-0 pb-2">
-                                <div class="card-body">
-                                    <form role="form">
-                                        <div class="mb-3">
-                                            <label>Email</label> <input type="email" class="form-control" aria-label="Email" value={email} onChange={(event) => setEmail(event.target.value)}/>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label>Mot De Passe</label> <input type="password" class="form-control" aria-label="Mot De Passe" value={mdp}  onChange={(event) => setMdp(event.target.value)}/>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0" onClick={authentification}>Se Connecter</button>
-                                        </div>
-                                    </form>
+        <main class="main-content  mt-0">
+            <section>
+                <div class="page-header min-vh-75">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 d-flex flex-column mx-auto">
+                                <div class="card card-plain mt-8">
+                                    <div class="card-header pb-0 text-left bg-transparent">
+                                    <h3 class="font-weight-bolder text-info text-gradient">Login</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <form role="form">
+                                            <div class="mb-3">
+                                                <label>Email</label> <input type="email" class="form-control" aria-label="Email" value={email} onChange={(event) => setEmail(event.target.value)}/>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Mot De Passe</label> <input type="password" class="form-control" aria-label="Mot De Passe" value={mdp}  onChange={(event) => setMdp(event.target.value)}/>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0" onClick={authentification}>Se Connecter</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
         </>
     );
