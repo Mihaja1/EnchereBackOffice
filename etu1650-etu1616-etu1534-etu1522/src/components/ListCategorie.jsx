@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import logoct from "../assets/img/logoct.png"
 import LeftSide from "./LeftSide";
+import {Link } from "react-router-dom";
+
 
 
 const ListCategorie = () => {
@@ -24,6 +26,22 @@ const ListCategorie = () => {
             }
         );
     }, []);
+
+    function supprimer(idCategorie) {
+        fetch('http://localhost:8080/categorie/'+idCategorie,{
+            method: 'delete'
+        })
+        .then((item)=>item.json())
+        .then((data) => {
+            var error = data.error;
+            if( error == null ){
+                window.location.replace("/listeCategorie");
+            }
+            else{
+                window.alert(JSON.stringify(error,null,3));
+            }
+        }) 
+    }
 
     
     return (
@@ -55,16 +73,27 @@ const ListCategorie = () => {
                                                 <tr>
                                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">idCatégorie</th>
                                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nom</th>
+                                                    <th></th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {categories.map((c) => 
-                                                    <tr>
+                                                    <tr >
                                                         <td>
                                                             <span class="text-xs font-weight-bold">{c.idCategorie}</span>
+                                                            
                                                         </td>
                                                         <td class="align-middle">
                                                             {c.valeur}
+                                                        </td>
+                                                        <td>
+                                                            <Link to={"/updateCategorie/"+c.idCategorie}><span class="badge badge-sm bg-gradient-success">Modifier</span></Link>
+                                                        </td>
+                                                        <td>
+                                                            <div style={{width: '100px'}}>
+                                                                <a onClick={() => supprimer(c.idCategorie)}><span class="badge badge-sm bg-gradient-secondary">Supprimer</span></a>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 
