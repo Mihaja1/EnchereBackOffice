@@ -1,26 +1,27 @@
 import LeftSide from "./LeftSide";
 import React, { useState } from 'react';
 
-const FormCommission = () => {
+const FormCategorie = () => {
 
-    const [taux, setTaux] = useState('');
+    const [valeur, setValeur] = useState('');
 
-    function ajoutCommission() {
+    function ajoutCategorie() {
 
-        var commission = {
-            "taux" : taux,
+        var categorie = {
+            "valeur" : valeur,
         };
 
-        fetch('http://localhost:8080/commission/insertion',{
+        fetch('http://localhost:8080/categorie/insertion',{
             method : 'POST',
-            body : JSON.stringify(commission),
+            body : JSON.stringify(categorie),
             headers : {'Content-Type' : 'application/json'},
         })
         .then(response => response.json())
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.alert('Message : Commission ajoutée avec succès!');
+                    window.alert('Message : Catégorie ajoutée avec succès!');
+                    window.location.replace("/listeCategorie");
                 }
                 else{
                     window.alert(error);
@@ -39,7 +40,7 @@ const FormCommission = () => {
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Commission</li>
+                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Catégorie</li>
                         </ol>
                     <h6 class="font-weight-bolder mb-0">Insertion</h6>
                     </nav>
@@ -50,16 +51,16 @@ const FormCommission = () => {
                     <div class="col-10">
                         <div class="card mb-4">
                             <div class="card-header pb-0">
-                            <h6>Ajout commission</h6>
+                            <h6>Ajout catégorie</h6>
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="card-body">
                                     <form role="form">
                                         <div class="mb-3">
-                                            <label>Taux</label> <input type="number" class="form-control" placeholder="Taux" aria-label="Taux" value={taux} onChange={(event) => setTaux(event.target.value)}/>
+                                            <label>Valeur</label> <input type="text" class="form-control"  aria-label="Valeur" value={valeur} onChange={(event) => setValeur(event.target.value)}/>
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0" onClick={ajoutCommission}>Ajouter</button>
+                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0" onClick={ajoutCategorie}>Ajouter</button>
                                         </div>
                                     </form>
                                 </div>
@@ -73,4 +74,4 @@ const FormCommission = () => {
     );
 }
 
-export default FormCommission;
+export default FormCategorie;

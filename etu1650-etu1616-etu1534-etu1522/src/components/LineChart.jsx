@@ -42,7 +42,7 @@ const LineChart = () => {
     labels: labels,
     datasets: [
         {
-            label: "My First dataset",
+            label: "Statistique des catégories",
             tension: 0.4,
             borderWidth: 0,
             pointRadius: 0,
@@ -94,7 +94,7 @@ const LineChart = () => {
                                     </div>
                                 </div>
                             </div>
-                                <div class="card-body px-0 pb-2">
+                                <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
