@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import curved6 from "../assets/img/curved-images/curved6.jpg";
-import "../assets/css/login.css";
 
 const Login = () => {
 
@@ -14,7 +13,7 @@ const Login = () => {
             "motDePasse": mdp
         };
 
-        fetch('https://wservice-production.up.railway.app/admin/authentification',{
+        fetch('https://wservice-production-cc9e.up.railway.app/admin/authentification',{
             method : 'POST',
             body : JSON.stringify(admins),
             headers : {'Content-Type' : 'application/json'},

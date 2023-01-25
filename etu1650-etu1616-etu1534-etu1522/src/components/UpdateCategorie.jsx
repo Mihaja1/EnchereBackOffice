@@ -17,7 +17,7 @@ const UpdateCategorie = () => {
             "idCategorie" : id,
             "valeur" : valeur
         }
-        fetch('https://wservice-production.up.railway.app/categorie/updateCategorie',{
+        fetch('https://wservice-production-cc9e.up.railway.app/categorie/updateCategorie',{
                 method: 'PUT',
                 body : JSON.stringify(categorie),
                 headers : {'Content-Type' : 'application/json'},

@@ -11,7 +11,7 @@ const FormCategorie = () => {
             "valeur" : valeur,
         };
 
-        fetch('https://wservice-production.up.railway.app/categorie/insertion',{
+        fetch('https://wservice-production-cc9e.up.railway.app/categorie/insertion',{
             method : 'POST',
             body : JSON.stringify(categorie),
             headers : {'Content-Type' : 'application/json'},
