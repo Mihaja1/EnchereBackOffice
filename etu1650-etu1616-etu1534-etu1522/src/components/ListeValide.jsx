@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import LeftSide from "./LeftSide";
 
 
-function ListNonValide() {
+const ListeValide = () => {
 
     const [rechargement, setRechargement] = useState([]);
     const [vide, setVide] = useState();
 
     useEffect(()=>{
-        fetch("http://localhost:8080/rechargement/listeNonValide", {
+        fetch("https://wservice-production.up.railway.app/rechargement/listeValide", {
             method: 'GET'
         })
         .then((item)=>item.json())
@@ -20,16 +20,6 @@ function ListNonValide() {
             setRechargement(data["data"]);
         })
     }, [rechargement]);
-
-    const handleClick = (idRechargement) => {
-            fetch("http://localhost:8080/rechargement/validationRechargement?idRechargement="+idRechargement, {
-                method: 'PUT'
-            })
-            .then((item)=>item.json())
-            .then((data) => {
-                var d = JSON.stringify(data["data"]);
-            })
-    }
 
     if (rechargement === undefined) {
         return (
@@ -83,7 +73,7 @@ function ListNonValide() {
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-header pb-0">
-                                <h6>Liste des rechargements non validés</h6>
+                                <h6>Liste des rechargements validés</h6>
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">
@@ -112,9 +102,6 @@ function ListNonValide() {
                                                         <td class="align-middle text-center">
                                                             <span class="text-secondary text-xs font-weight-bold">{r.dateRechargement}</span>
                                                         </td>
-                                                        <td class="align-middle text-center text-sm">
-                                                            <a onClick={()=>handleClick(r.idRechargement)}><span class="badge badge-sm bg-gradient-success">Confirmer</span></a>
-                                                        </td>
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -124,10 +111,13 @@ function ListNonValide() {
                             </div>
                         </div>
                     </div>
+                    <div style={{width: '100px'}}>
+                        <a href="/rechargement"><button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Retour</button></a>
+                    </div>
                 </div>
             </main>
         </>
     )
 };
 
-export default ListNonValide;
+export default ListeValide;

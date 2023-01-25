@@ -5,6 +5,7 @@ import ListeCategorie from './pages/ListeCategorie';
 import ListeCommission from './pages/ListeCommission';
 import AjoutCommission from './pages/AjoutCommission';
 import AjoutCategorie from './pages/AjoutCategorie';
+import UpdateCategorie from './components/UpdateCategorie';
 import Login from './components/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/categorie" element={<AjoutCategorie />} />
           <Route path="/listeCategorie" element={<ListeCategorie />} />
           <Route path="/listeCommission" element={<ListeCommission />} />
+          <Route path="/updateCategorie/:id" element={<UpdateCategorie />} />
         </Routes>
       </BrowserRouter>
   );

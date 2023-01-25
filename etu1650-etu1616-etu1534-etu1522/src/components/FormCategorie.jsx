@@ -11,7 +11,7 @@ const FormCategorie = () => {
             "valeur" : valeur,
         };
 
-        fetch('http://localhost:8080/categorie/insertion',{
+        fetch('https://wservice-production.up.railway.app/categorie/insertion',{
             method : 'POST',
             body : JSON.stringify(categorie),
             headers : {'Content-Type' : 'application/json'},
@@ -20,7 +20,6 @@ const FormCategorie = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.alert('Message : Catégorie ajoutée avec succès!');
                     window.location.replace("/listeCategorie");
                 }
                 else{

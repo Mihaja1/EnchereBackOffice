@@ -8,7 +8,7 @@ const ListCommission = () => {
     const [commissions, setCommission] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:8080/commission/liste',{
+        fetch('https://wservice-production.up.railway.app/commission/liste',{
             method : 'GET',
             headers : {'Content-Type' : 'application/json'},
         })

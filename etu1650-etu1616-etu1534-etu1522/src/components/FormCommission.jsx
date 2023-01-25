@@ -11,7 +11,7 @@ const FormCommission = () => {
             "taux" : taux,
         };
 
-        fetch('http://localhost:8080/commission/insertion',{
+        fetch('https://wservice-production.up.railway.app/commission/insertion',{
             method : 'POST',
             body : JSON.stringify(commission),
             headers : {'Content-Type' : 'application/json'},
@@ -20,7 +20,7 @@ const FormCommission = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.alert('Message : Commission ajoutée avec succès!');
+                    window.location.replace("/listeCommission");
                 }
                 else{
                     window.alert(error);

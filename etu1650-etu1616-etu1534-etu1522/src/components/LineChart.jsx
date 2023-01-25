@@ -9,7 +9,7 @@ const LineChart = () => {
     const [message, setMessage] = useState();
 
     useEffect(()=>{
-        fetch("http://localhost:8080/statistique", {
+        fetch("https://wservice-production.up.railway.app/statistique", {
             method: 'GET'
         })
         .then((item)=>item.json())
