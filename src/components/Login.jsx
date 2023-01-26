@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+    const [erreur, setError] = useState('');
     const navigate = useNavigate();
     const [email, setEmail] = useState("Liantsoa@gmail.com");
     const [mdp, setMdp] = useState("1234LI");
@@ -27,15 +28,7 @@ const Login = () => {
                     navigate("/statistique");
                 }
                 else{
-                    // window.alert("eeee "+error.code);
-                    // return(
-                    //     <reactjsAlert>
-                    //         status = {true}
-                    //         type = "error"
-                    //         title = "Code: {error.code} . {error.message}"
-                    //         Close = { () => this.setState ({satus:false})}
-                    //     </reactjsAlert>
-                    // )
+                    setError("Code: "+error.code+". Message: "+error.message);
                 }
             }
         );
@@ -52,7 +45,9 @@ const Login = () => {
                             <div class="col-xl-4 col-lg-5 d-flex flex-column mx-auto">
                                 <div class="card card-plain mt-8">
                                     <div class="card-header pb-0 text-left bg-transparent">
-                                    <h3 class="font-weight-bolder text-info text-gradient">Login</h3>
+                                        <h3 class="font-weight-bolder text-info text-gradient">Login</h3>
+                                        
+                                        {erreur}
                                     </div>
                                     <div class="card-body">
                                         <form role="form">

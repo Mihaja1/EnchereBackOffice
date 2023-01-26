@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const FormCommission = () => {
 
+    const [erreur, setError] = useState('');
     const navigate = useNavigate();
     const [taux, setTaux] = useState('');
 
@@ -25,10 +26,7 @@ const FormCommission = () => {
                     navigate("/listeCommission");
                 }
                 else{
-                    // <Alert severity="error">
-                    //     Code: {error.code}
-                    //     {error.message}
-                    // </Alert>
+                    setError("Code: "+error.code+". Message: "+error.message);
                 }
             }
         );
@@ -56,6 +54,7 @@ const FormCommission = () => {
                         <div class="card mb-4">
                             <div class="card-header pb-0">
                             <h6>Ajout commission</h6>
+                            {erreur}
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="card-body">

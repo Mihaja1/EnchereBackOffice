@@ -5,6 +5,7 @@ import LeftSide from "./LeftSide";
 
 const ListCommission = () => {
     
+    const [erreur, setError] = useState('');
     const [commissions, setCommission] = useState([]);
 
     useEffect(()=>{
@@ -19,10 +20,7 @@ const ListCommission = () => {
                     setCommission(data["data"]);
                 }
                 else{
-                    // <Alert severity="error">
-                    //     Code: {error.code}
-                    //     {error.message}
-                    // </Alert>
+                    setError("Code: "+error.code+". Message: "+error.message);
                 }
             }
         );
@@ -50,6 +48,7 @@ const ListCommission = () => {
                             <div class="card mb-4">
                                 <div class="card-header pb-0">
                                 <h6>Liste des commissions</h6>
+                                {erreur}
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">

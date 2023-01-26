@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const ListCategorie = () => {
     
+    const [erreur, setError] = useState('');
     const navigate = useNavigate();
     const [categories, setCategorie] = useState([]);
 
@@ -22,10 +23,7 @@ const ListCategorie = () => {
                     setCategorie(data["data"]);
                 }
                 else{
-                    // <Alert severity="error">
-                    //     <AlertTitle>Code: {error.code} </AlertTitle>
-                    //     {error.message}
-                    // </Alert>
+                    setError("Code: "+error.code+". Message: "+error.message);
                 }
             }
         );
@@ -42,10 +40,7 @@ const ListCategorie = () => {
                 navigate("/listeCategorie");
             }
             else{
-                // <Alert severity="error">
-                //     <AlertTitle>Code: {error.code} </AlertTitle>
-                //     {error.message}
-                // </Alert>
+                setError("Code: "+error.code+". Message: "+error.message);
             }
         }) 
     }
@@ -72,6 +67,7 @@ const ListCategorie = () => {
                             <div class="card mb-4">
                                 <div class="card-header pb-0">
                                 <h6>Liste des catégories</h6>
+                                {erreur}
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">

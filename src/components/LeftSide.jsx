@@ -24,8 +24,7 @@ const LeftSide = () => {
                 <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <Link to="/statistique">
-                            <a class="nav-link">
+                        <Link to="/statistique" class="nav-link">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>shop </title>
@@ -42,13 +41,11 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Dashboard</span>
-                            </a>
                         </Link>
                     
                     </li>
                     <li class="nav-item">
-                        <Link to="/rechargement">
-                            <a class="nav-link  active">
+                        <Link to="/rechargement" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -65,12 +62,10 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Rechargements</span>
-                            </a>
                         </Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="/commission">
-                            <a class="nav-link  active">
+                        <Link to="/commission" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -87,12 +82,10 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Ajout Commission</span>
-                            </a>
                         </Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="/listeCommission">
-                            <a class="nav-link  active">
+                        <Link to="/listeCommission" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -109,12 +102,10 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Liste Commission</span>
-                            </a>
                         </Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="/categorie">
-                            <a class="nav-link  active">
+                        <Link to="/categorie" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -131,12 +122,10 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Ajout Catégorie</span>
-                            </a>
                         </Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="/listeCategorie">
-                            <a class="nav-link  active">
+                        <Link to="/listeCategorie" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -153,13 +142,10 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Liste Catégorie</span>
-                            </a>
-
                         </Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="/">
-                            <a class="nav-link  active">
+                        <Link to="/" class="nav-link  active">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <title>office</title>
@@ -176,7 +162,6 @@ const LeftSide = () => {
                                 </svg>
                                 </div>
                                 <span class="nav-link-text ms-1">Déconnexion</span>
-                            </a>
                         </Link>
                     </li>
                 </ul>
