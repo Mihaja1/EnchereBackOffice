@@ -1,7 +1,6 @@
 import LeftSide from "./LeftSide";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Alert, AlertTitle } from "react";
 
 const FormCategorie = () => {
 
@@ -26,10 +25,10 @@ const FormCategorie = () => {
                     navigate("/listeCategorie");
                 }
                 else{
-                    <Alert severity="error">
-                        <AlertTitle>Code: {error.code} </AlertTitle>
-                        {error.message}
-                    </Alert>
+                    // <Alert severity="error">
+                    //     Code: {error.code}
+                    //     {error.message}
+                    // </Alert>
                 }
             }
         );

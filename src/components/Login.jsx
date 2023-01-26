@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import curved6 from "../assets/img/curved-images/curved6.jpg";
 import { useNavigate } from 'react-router-dom';
-import { Alert, AlertTitle } from "react";
 
 const Login = () => {
 
@@ -28,10 +27,15 @@ const Login = () => {
                     navigate("/statistique");
                 }
                 else{
-                    <Alert severity="error">
-                        <AlertTitle>Code: {error.code} </AlertTitle>
-                        {error.message}
-                    </Alert>
+                    // window.alert("eeee "+error.code);
+                    // return(
+                    //     <reactjsAlert>
+                    //         status = {true}
+                    //         type = "error"
+                    //         title = "Code: {error.code} . {error.message}"
+                    //         Close = { () => this.setState ({satus:false})}
+                    //     </reactjsAlert>
+                    // )
                 }
             }
         );

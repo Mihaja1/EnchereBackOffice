@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LeftSide from "./LeftSide";
-import { Alert, AlertTitle } from "react";
 
 
 const UpdateCategorie = () => {
@@ -31,10 +30,10 @@ const UpdateCategorie = () => {
                     navigate("/listeCategorie");
                 }
                 else{
-                    <Alert severity="error">
-                        <AlertTitle>Code: {error.code} </AlertTitle>
-                        {error.message}
-                    </Alert>
+                    // <Alert severity="error">
+                    //     Code: {error.code}
+                    //     {error.message}
+                    // </Alert>
                 }
             }
         );

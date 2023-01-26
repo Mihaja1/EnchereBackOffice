@@ -3,7 +3,6 @@ import logoct from "../assets/img/logoct.png"
 import LeftSide from "./LeftSide";
 import {Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Alert, AlertTitle } from "react";
 
 
 const ListCategorie = () => {
@@ -23,10 +22,10 @@ const ListCategorie = () => {
                     setCategorie(data["data"]);
                 }
                 else{
-                    <Alert severity="error">
-                        <AlertTitle>Code: {error.code} </AlertTitle>
-                        {error.message}
-                    </Alert>
+                    // <Alert severity="error">
+                    //     <AlertTitle>Code: {error.code} </AlertTitle>
+                    //     {error.message}
+                    // </Alert>
                 }
             }
         );
@@ -43,10 +42,10 @@ const ListCategorie = () => {
                 navigate("/listeCategorie");
             }
             else{
-                <Alert severity="error">
-                    <AlertTitle>Code: {error.code} </AlertTitle>
-                    {error.message}
-                </Alert>
+                // <Alert severity="error">
+                //     <AlertTitle>Code: {error.code} </AlertTitle>
+                //     {error.message}
+                // </Alert>
             }
         }) 
     }

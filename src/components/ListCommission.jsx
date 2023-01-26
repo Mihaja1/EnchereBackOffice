@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import logoct from "../assets/img/logoct.png"
 import LeftSide from "./LeftSide";
-import { Alert, AlertTitle } from "react";
 
 
 const ListCommission = () => {
@@ -20,10 +19,10 @@ const ListCommission = () => {
                     setCommission(data["data"]);
                 }
                 else{
-                    <Alert severity="error">
-                        <AlertTitle>Code: {error.code} </AlertTitle>
-                        {error.message}
-                    </Alert>
+                    // <Alert severity="error">
+                    //     Code: {error.code}
+                    //     {error.message}
+                    // </Alert>
                 }
             }
         );
