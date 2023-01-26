@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import logoct from "../assets/img/logoct.png"
 import LeftSide from "./LeftSide";
 import {Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 
 const ListCategorie = () => {
     
+    const navigate = useNavigate();
     const [categories, setCategorie] = useState([]);
 
     useEffect(()=>{
@@ -21,7 +22,10 @@ const ListCategorie = () => {
                     setCategorie(data["data"]);
                 }
                 else{
-                    window.alert(error);
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );
@@ -35,10 +39,13 @@ const ListCategorie = () => {
         .then((data) => {
             var error = data.error;
             if( error == null ){
-                window.location.replace("/listeCategorie");
+                navigate("/listeCategorie");
             }
             else{
-                window.alert(JSON.stringify(error,null,3));
+                <Alert severity="error">
+                    <AlertTitle>Code: {error.code} </AlertTitle>
+                    {error.message}
+                </Alert>
             }
         }) 
     }

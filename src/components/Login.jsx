@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import curved6 from "../assets/img/curved-images/curved6.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState("Liantsoa@gmail.com");
     const [mdp, setMdp] = useState("1234LI");
 
@@ -22,10 +24,13 @@ const Login = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.location.replace("/statistique");
+                    navigate("/statistique");
                 }
                 else{
-                    window.alert(JSON.stringify(error));
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );

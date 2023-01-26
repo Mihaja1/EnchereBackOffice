@@ -1,13 +1,14 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import logoct from "../assets/img/logoct.png";
+import { useNavigate } from "react-router-dom";
 import LeftSide from "./LeftSide";
 
 
 const UpdateCategorie = () => {
     
 
+    const navigate = useNavigate();
     const [valeur,setValeur] = useState('');
     const {id} = useParams();
 
@@ -26,10 +27,13 @@ const UpdateCategorie = () => {
             .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.location.replace("/listeCategorie");
+                    navigate("/listeCategorie");
                 }
                 else{
-                    window.alert(error);
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );

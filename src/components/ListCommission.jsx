@@ -19,7 +19,10 @@ const ListCommission = () => {
                     setCommission(data["data"]);
                 }
                 else{
-                    window.alert(error);
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );

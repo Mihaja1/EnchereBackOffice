@@ -1,8 +1,10 @@
 import LeftSide from "./LeftSide";
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const FormCategorie = () => {
 
+    const navigate = useNavigate();
     const [valeur, setValeur] = useState('');
 
     function ajoutCategorie() {
@@ -20,10 +22,13 @@ const FormCategorie = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.location.replace("/listeCategorie");
+                    navigate("/listeCategorie");
                 }
                 else{
-                    window.alert(error);
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );

@@ -13,7 +13,7 @@ function ListNonValide() {
         })
         .then((item)=>item.json())
         .then((data) => {
-            console.log(JSON.stringify(data["data"]));
+            //console.log(JSON.stringify(data["data"]));
             if((data["data"]) === undefined) {
                 setVide(data["message"]);
             }

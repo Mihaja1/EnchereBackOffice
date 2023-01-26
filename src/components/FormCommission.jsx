@@ -1,8 +1,10 @@
 import LeftSide from "./LeftSide";
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const FormCommission = () => {
 
+    const navigate = useNavigate();
     const [taux, setTaux] = useState('');
 
     function ajoutCommission() {
@@ -20,10 +22,13 @@ const FormCommission = () => {
         .then(data => {
                 var error = data.error;
                 if( error == null ){
-                    window.location.replace("/listeCommission");
+                    navigate("/listeCommission");
                 }
                 else{
-                    window.alert(error);
+                    <Alert severity="error">
+                        <AlertTitle>Code: {error.code} </AlertTitle>
+                        {error.message}
+                    </Alert>
                 }
             }
         );
