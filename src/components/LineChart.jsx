@@ -24,16 +24,16 @@ const LineChart = () => {
 
     const labels = [];
     
-    for(let i=0; i<statistique.length; i++) {
-        labels.push(statistique[i].categorie);
+    for(let i=0; i<statistique?.length; i++) {
+        labels.push(statistique[i]?.categorie);
     }
 
     let total = 0;
 
     const d = [];
-    for(let i=0; i<statistique.length; i++) {
-        d.push(statistique[i].count);
-        total += statistique[i].count;
+    for(let i=0; i<statistique?.length; i++) {
+        d.push(statistique[i]?.count);
+        total += statistique[i]?.count;
     }
 
     console.log(total);
@@ -104,7 +104,7 @@ const LineChart = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {statistique.map((s) => 
+                                            {statistique?.map((s) => 
                                                 <tr>
                                                     <td>
                                                         <span class="text-xs font-weight-bold">{s.categorie}</span>
