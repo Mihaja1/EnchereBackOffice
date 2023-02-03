@@ -8,7 +8,7 @@ const ListeValide = () => {
     const [vide, setVide] = useState();
 
     useEffect(()=>{
-        fetch("https://wservice-production-cc9e.up.railway.app/rechargement/listeValide", {
+        fetch("https://ws-deploiement-enchere-production.up.railway.app/rechargement/listeValide", {
             method: 'GET'
         })
         .then((item)=>item.json())

@@ -9,7 +9,7 @@ const ListCommission = () => {
     const [commissions, setCommission] = useState([]);
 
     useEffect(()=>{
-        fetch('https://wservice-production-cc9e.up.railway.app/commission/liste',{
+        fetch('https://ws-deploiement-enchere-production.up.railway.app/commission/liste',{
             method : 'GET',
             headers : {'Content-Type' : 'application/json'},
         })

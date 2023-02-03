@@ -8,7 +8,7 @@ function ListNonValide() {
     const [vide, setVide] = useState();
 
     useEffect(()=>{
-        fetch("https://wservice-production-cc9e.up.railway.app/rechargement/listeNonValide", {
+        fetch("https://ws-deploiement-enchere-production.up.railway.app/rechargement/listeNonValide", {
             method: 'GET'
         })
         .then((item)=>item.json())
@@ -22,7 +22,7 @@ function ListNonValide() {
     }, [rechargement]);
 
     const handleClick = (idRechargement) => {
-            fetch("https://wservice-production-cc9e.up.railway.app/rechargement/validationRechargement?idRechargement="+idRechargement, {
+            fetch("https://ws-deploiement-enchere-production.up.railway.app/rechargement/validationRechargement?idRechargement="+idRechargement, {
                 method: 'PUT'
             })
             .then((item)=>item.json())

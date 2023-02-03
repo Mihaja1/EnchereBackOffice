@@ -12,7 +12,7 @@ const ListCategorie = () => {
     const [categories, setCategorie] = useState([]);
 
     useEffect(()=>{
-        fetch('https://wservice-production-cc9e.up.railway.app/categorie/liste',{
+        fetch('https://ws-deploiement-enchere-production.up.railway.app/categorie/liste',{
             method : 'GET',
             headers : {'Content-Type' : 'application/json'},
         })
@@ -30,7 +30,7 @@ const ListCategorie = () => {
     }, []);
 
     function supprimer(idCategorie) {
-        fetch('https://wservice-production-cc9e.up.railway.app/categorie/'+idCategorie,{
+        fetch('https://ws-deploiement-enchere-production.up.railway.app/categorie/'+idCategorie,{
             method: 'delete'
         })
         .then((item)=>item.json())
